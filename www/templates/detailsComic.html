@@ -1,0 +1,80 @@
+<ion-view view-title="Details">
+	<ion-content>
+		<div>
+			<div class="list card custom-float">
+				<div class="item item-avatar">
+					<img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+					<h2>{{comic.title}}</h2>
+					<p>{{comic.series.name}}</p>
+				</div>
+
+				<div class="item item-image">
+					<img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" class="custom-img">
+				</div>
+				
+				<div class="item item-body">
+					<div class="col">
+						<div class="row">
+							<div class="col">{{comic.description}}</div>							
+						</div>						
+					</div>
+					<div class="col" ng-if="comic.creators.available > 0">
+						<div class="list">
+							<div class="item item-divider">
+								Creators
+							</div>
+							<div class="item">
+								<div class="row" align="center">
+									<div class="col">Name</div>
+									<div class="col">Role</div>
+								</div>
+								<div class="row" ng-repeat="row in comic.creators.items">
+									<div class="col">{{row.name}}</div>
+									<div class="col">{{row.role}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col" ng-if="comic.characters.available > 0">
+						<div class="list">
+							<div class="item item-divider">
+								Characters
+							</div>
+							<div class="item">
+								<div class="row" align="center">
+									<div class="col">Name</div>									
+								</div>
+								<div class="row" ng-repeat="row in comic.characters.items">
+									<div class="col">{{row.name}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col" ng-if="comic.stories.available > 0">
+						<div class="list">
+							<div class="item item-divider">
+								Stories
+							</div>
+							<div class="item">
+								<div class="row" align="center">
+									<div class="col">Name</div>
+									<div class="col">Type</div>
+								</div>
+								<div class="row" ng-repeat="row in comic.stories.items">
+									<div class="col">{{row.name}}</div>
+									<div class="col">{{row.type}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="row">
+							<div class="col">Price</div>
+							<div class="col">USD ${{comic.prices[0].price}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

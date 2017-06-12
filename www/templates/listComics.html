@@ -1,0 +1,13 @@
+<ion-view view-title="Comics">
+	<ion-content>
+		<div >				
+			<div class="list" ng-repeat="comic in comics">
+				<a class="item item-thumbnail-left" ng-click="details(comic.id)">
+					<img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+					<h2>{{comic.title}}</h2>
+					<p>{{comic.series.name}}</p>
+				</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
