@@ -13,7 +13,7 @@ angular.module('marvel.controllers', [])
 	
 	var hash = md5(hashMd5);
 
-	var url = 'http://gateway.marvel.com/v1/public/comics?ts='+ timestamp +'&apikey='+ publicKey +'&hash='+hash;
+	var url = 'https://gateway.marvel.com/v1/public/comics?ts='+ timestamp +'&apikey='+ publicKey +'&hash='+hash;
 
 	$http.get(url).then(function(response){
 		$scope['comics'] = response['data']['data']['results'];
@@ -39,7 +39,7 @@ angular.module('marvel.controllers', [])
 	
 	var hash = md5(hashMd5);
 
-	var url = 'http://gateway.marvel.com/v1/public/comics/' + id + '?ts=' + timestamp +'&apikey='+ publicKey +'&hash='+hash;
+	var url = 'https://gateway.marvel.com/v1/public/comics/' + id + '?ts=' + timestamp +'&apikey='+ publicKey +'&hash='+hash;
 
 	$http.get(url).then(function(response){
 		$scope['comic'] = response['data']['data']['results'][0];
